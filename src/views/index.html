@@ -1,77 +1,41 @@
 <!-- DIA 1 -->
-<!DOCTYPE html>
-<html lang="pt_br">
+{% extends "partials/layout.html" %}
 
-<!--
-    HTML
-    Hypertext
-        hiper texto
-    Markup
-        Marcação de texto
-    Language
-        Linguagem
--->
+{% set pageId = "page-home" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoleta</title>
+{% block styles %}
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+{% block content %}
+    <div class="content">
+        <header>
+            <img src="/icones/logo.svg" alt="Logomarca">
+            <a href="/views/create-point.html">
+                <span></span>
+                Cadastre um ponto de coleta
+            </a>
+        </header>
 
-    <link rel="stylesheet" href="/public/styles/main.css">
-    <link rel="stylesheet" href="/public/styles/home.css">
-    <link rel="stylesheet" href="/public/styles/modal.css">
+        <main>
+            <h1>Seu marketplace de coleta de resíduos</h1>
 
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
 
-    <link rel="stylesheet" href="/public/styles/responsive.css">
-</head>
-<body>
-
-    <div id="page-home">
-        <div class="content">
-            <header>
-                <img src="/public/icones/logo.svg" alt="Logomarca">
-                <a href="/src/views/create-point.html">
-                    <span></span>
-                    Cadastre um ponto de coleta
-                </a> 
-            </header>
-
-            <main>
-                <h1>Seu marketplace de coleta de resíduos</h1>
-                
-                <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
-            
-                <a href="#"><span></span><strong>Pesquisar pontos de coleta</strong></a>
-            </main>
-    
-        </div>
+            <a href="#">
+                <span></span>
+                <strong>Pesquisar pontos de coleta</strong>
+            </a>
+        </main>
     </div>
-    <!-- DIA 1 -->
-    <!-- DIA 2 -->
-    <div id="modal" class="hide">
-        <div class="content">
-            <div class="header">
-                <h1>Pontos de Coleta</h1>
-                <a href="#">Fechar</a>
-            </div>
-            <form action="/src/views/search-results.html">
-                <label for="search">Cidade</label>
-                <div class="search field">
-                    <input 
-                    type="text" 
-                    name="search"
-                    placeholder="Pesquise por cidade"
-                    >
-                    <button>
-                        <img src="/public/icones/search.svg" alt="Buscar">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- DIA 2 -->
-    <script src="/public/scripts/index.js"></script>
-</body>
-</html>
+{% endblock content %}
+
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}
+<!-- DIA 1 -->

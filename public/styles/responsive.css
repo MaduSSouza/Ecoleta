@@ -28,6 +28,14 @@
     #page-search-results .cards img {
         height: 230px;
     }
+
+    #page-creat-point .field-group {
+        flex-direction: column;
+    }
+
+    #page-creat-point .field-group .field + .field {
+        margin-left: 0;
+    }
 }
 /* DIA 1 */
 /* DIA 2 */
@@ -42,4 +50,4 @@
         background-position-y: 200px;
     }
 }
-/* DIA 1 */
+/* DIA 2 */
